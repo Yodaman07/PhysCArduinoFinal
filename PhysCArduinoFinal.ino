@@ -1,6 +1,6 @@
 #include <Stepper.h>
 #include <Servo.h>
-
+//Author: Ayaan Irshad
 Servo servo;
 Stepper stepperMotor(2048, 7, 5, 6, 4); // PINs 1, 3, 2, 4 IN THAT ORDER
 int servoPos = 0; //Sevro pos to hold
@@ -33,17 +33,13 @@ void loop() {
 
 
   if (joyY-20 < 305){//JOYRIGHT //325 is middle 
-    // Serial.println("HI");
-    // servo.write(map(joyY, 0, 325, 0, 180));
     servoPos +=1; 
   }else if (joyY+20 > 345){ //JOYLEFT
     servoPos -=1; 
   }
 
-  if (servoPos>180){servoPos = 180;}
+  if (servoPos>180){servoPos = 180;} //prevents the servo pos from going negative or past 180
   if (servoPos<0){servoPos = 0;}
 
-  // Serial.println(servoPos);
   servo.write(servoPos);
-
 }
