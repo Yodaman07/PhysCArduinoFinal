@@ -1,5 +1,5 @@
-#include <Stepper.h>
-#include <Servo.h>
+#include <Stepper.h> //https://docs.arduino.cc/libraries/stepper/
+#include <Servo.h> //https://docs.arduino.cc/libraries/servo/
 //Author: Ayaan Irshad
 Servo servo;
 Stepper stepperMotor(2048, 7, 5, 6, 4); // PINs 1, 3, 2, 4 IN THAT ORDER
@@ -25,16 +25,16 @@ void loop() {
   int joyY = analogRead(A0);
   
   Serial.println(joyX);
-  if (joyX-20 < 307){ //327 is joyX at medium //JOYUP
+  if (joyX < 307){ //327 is joyX at medium //JOYUP
     stepperMotor.step(5); 
-  }else if (joyX+20 > 357){ //JOYDOWN
+  }else if (joyX > 357){ //JOYDOWN
     stepperMotor.step(-5);
   }
 
 
-  if (joyY-20 < 305){//JOYRIGHT //325 is middle 
+  if (joyY < 305){//JOYRIGHT //325 is middle 
     servoPos +=1; 
-  }else if (joyY+20 > 345){ //JOYLEFT
+  }else if (joyY > 345){ //JOYLEFT
     servoPos -=1; 
   }
 
