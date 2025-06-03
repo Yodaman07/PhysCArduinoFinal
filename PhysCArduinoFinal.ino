@@ -1,6 +1,13 @@
 #include <Stepper.h> //https://docs.arduino.cc/libraries/stepper/
+//An official arduino library for easily interfacing with stepper motors
 #include <Servo.h> //https://docs.arduino.cc/libraries/servo/
-//Author: Ayaan Irshad
+//An official arduino library for easily handling servos
+//Student Name: Ayaan
+//Code has been adapted from the adafruit learn arduino courses as well as lastminuteengineers, and instructables
+//https://lastminuteengineers.com/28byj48-stepper-motor-arduino-tutorial/
+//https://learn.adafruit.com/series/learn-arduino
+//https://www.instructables.com/Arduino-Servo-Motors/
+
 Servo servo;
 Stepper stepperMotor(2048, 7, 5, 6, 4); // PINs 1, 3, 2, 4 IN THAT ORDER
 int servoPos = 0; //Sevro pos to hold
